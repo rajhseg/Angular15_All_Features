@@ -1,0 +1,18 @@
+.rpanelrow-container
+{
+  display:flex;
+}
+
+.rdata-row {
+  clear: both;
+  height: 50px;
+  overflow: scroll;
+}
+
+.rdata-items {
+  width: 100px;
+  float: left;
+  padding: 5px;
+  margin: 1px;
+  border: 2px solid blue;
+}

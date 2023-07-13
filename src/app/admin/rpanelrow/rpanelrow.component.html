@@ -1,0 +1,9 @@
+<div class="rpanelrow-container">
+  <div class="rdata-row">
+  <div *RFor="rows; let item = data"  [rmatchrowdatasize]="columnsCount" [rows]="item">
+    <div *RFor="item.RowDatas; let row = data" class="rdata-items">
+      {{row.Data}}
+    </div>
+  </div>
+ </div>
+</div>

@@ -1,0 +1,65 @@
+<p>about works!</p>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Index</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr style="color:green; font-weight:bold"
+        *RFor="personList; let person = data; let index = $implict">
+      <td>{{person.Id}}</td>
+      <td>{{person.Name}}</td>
+      <td>{{person.Age}}</td>
+      <td>{{index}}</td>
+    </tr>
+  </tbody>
+
+</table>
+<br />
+
+<p>Value of Visible {{visible}}</p>
+
+<div [rhighlight]="visible" rColor="green">check for highlight directive</div>
+
+<button type="button" (click)="switchVisible()">Change Visible</button>
+
+<div *RIf="visible as Temp; then Template1; else Template2; let value = isTrue">
+  <br/>
+  <p>
+    This is inline template {{value}}, Temp {{Temp}}
+  </p>
+</div>
+
+<ng-template #Template1 let-data=isTrue>
+  this is then template {{data}}
+</ng-template>
+
+<ng-template #Template2>
+  this is else template
+</ng-template>
+
+
+
+<br/>
+<br/>
+<button type="button" (click)="AssignBlack()">Black</button>
+<button type="button" (click)="AssignRed()">Red</button>
+<button type="button" (click)="AssignWhite()">White</button>
+<button type="button" (click)="ServiceRoute()">Redirect to Service</button>
+
+
+<div [rswitch]="color">
+  <div *rswitchdefault>This is default {{visible}}</div>
+  <div *rswitchcase="3">This is Red {{visible}}</div>
+  <div *rswitchcase="2">This is Blue {{visible}}</div>
+  <div *rswitchcase="1">This is Black {{visible}}</div>
+</div>
+
+<app-rpanel>
+
+</app-rpanel>
